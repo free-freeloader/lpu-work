@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Enter a number:"
+read number
+
+original=$number
+reverse=0
+while [ $original -ne 0 ]
+do
+	reverse=$((reverse * 10 + original % 10))
+	original=$((original / 10))
+done
+
+echo "Reverse of $number is $reverse"

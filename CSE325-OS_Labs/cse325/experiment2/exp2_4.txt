@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Enter path to directory:"
+read dir
+
+if [[ $dir == "~" || $dir == "~/"* ]]; then
+  dir="${dir/#\~/$HOME}"
+fi
+
+if [ -d "$dir" ]; then
+  for file in "$dir"/*
+  do
+    echo "$file"
+  done
+else
+  echo "Directory not found"
+fi
+
